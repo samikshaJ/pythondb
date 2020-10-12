@@ -1,0 +1,20 @@
+version: '3.3'
+services:
+  application:
+    image: linuxos
+
+    ports:
+      - '9000:9000'
+
+  db:
+    image: mysql
+    restart: always
+	command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: 'linuxos_db'
+     
+      MYSQL_USER: 'root'
+      
+      MYSQL_PASSWORD: 'root'
+     
+      MYSQL_ROOT_PASSWORD: 'root'
